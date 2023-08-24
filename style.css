@@ -226,18 +226,10 @@ main :is(
     padding: 0;
 }
 
-/* 
-main {
-    padding: 0 var(--dm_100) 0;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--dm_100);
-    margin-bottom: var(--dm_400);
+.download_link {
+    color: var(--clr_accent);
+    text-decoration: underline;
 }
-
-.main_wrapper {
-    grid-column: 2 / -2;
-} */
 
 .text_content p {
     line-height: 1.5;
@@ -354,13 +346,13 @@ main {
 }
 
 @media (max-width: 50rem) {
-    main {
+    .main_section {
         display: block;
     }
 }
 
 @media (max-width: 60rem) {
-    main {
-        grid-template-columns: repeat(8, 1fr);
+    .main_section section {
+        grid-column: 1 / -2;
     }
 }
