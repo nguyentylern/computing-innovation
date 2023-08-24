@@ -17,6 +17,29 @@
     --clr_middleground: hsl(0 0% 60%);
     --clr_background: hsl(0 0% 100%);
     --clr_accent: hsl(233 100% 63%);
+
+    --ln_red: hsl(6 90% 45%);
+    --ln_green: hsl(139 100% 40%);
+    --ln_rainbow: linear-gradient( 89.7deg, rgba(223,0,0,1) 2.7%, rgba(214,91,0,1) 15.1%, rgba(233,245,0,1) 29.5%, rgba(23,255,17,1) 45.8%, rgba(29,255,255,1) 61.5%, rgba(5,17,255,1) 76.4%, rgba(202,0,253,1) 92.4% );
+    --ln_sage_green: hsl(75, 26%, 48%);
+}
+
+/* scrollbars */
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr_middleground);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--clr_accent);
 }
 
 /* reset */
@@ -267,19 +290,19 @@ main :is(
 /* color lines */
 
 .red_line {
-    background-color: hsl(6 90% 45%);
+    background-color: var(--ln_red);
 }
 
 .green_line {
-    background-color: hsl(139 100% 40%);
+    background-color: var(--ln_green);
 }
 
 .rainbow_line {
-    background-image: linear-gradient( 89.7deg, rgba(223,0,0,1) 2.7%, rgba(214,91,0,1) 15.1%, rgba(233,245,0,1) 29.5%, rgba(23,255,17,1) 45.8%, rgba(29,255,255,1) 61.5%, rgba(5,17,255,1) 76.4%, rgba(202,0,253,1) 92.4% );
+    background-image: var(--ln_rainbow);
 }
 
 .sage_green_line {
-    background-color: hsl(75, 26%, 48%);
+    background-color: var(--ln_sage_green);
 }
 
 /* medias */
