@@ -1,0 +1,366 @@
+@import "fonts.css";
+
+/* notes */
+    /* waveform is Love Trip by Takako Mamiya */
+/* font vars */
+
+:root {
+    --fw_light: 300;
+    --fw_regular: 400;
+    --fw_bold: 600;
+}
+
+/* color vars */
+
+:root {
+    --clr_foreground: hsl(0 0% 0%);
+    --clr_middleground: hsl(0 0% 60%);
+    --clr_background: hsl(0 0% 100%);
+    --clr_accent: hsl(233 100% 63%);
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    text-decoration: inherit;
+}
+
+html {
+    font-family: 'Uncut Sans', sans-serif;
+    font-weight: var(--fw_regular);
+    font-style: normal;
+
+    font-size: 112.5%;
+
+    background-color: var(--clr_background);
+    color: var(--clr_foreground);
+
+    overflow-x: hidden;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: 'Uncut Sans Var', sans-serif;
+        font-weight: var(--fw_regular);
+        font-style: normal;
+    }
+}
+
+body {
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+svg {
+    height: auto;
+    width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/* sr_only */
+
+.sr_only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+/* random util */
+
+.display_none {
+    display: none !important;
+}
+
+.margin_block_start_0 {
+    margin-block-start: 0 !important;
+}
+
+/* actual stuff */
+
+.hero_wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+}
+
+.hero_image {
+    object-fit: cover;
+    width: 100%;
+}
+
+/* spacers */
+
+:root {
+    --dm_100: 1rem;
+    --dm_200: 2rem;
+    --dm_300: 4rem;
+    --dm_400: 8rem;
+}
+
+/* whatever */
+
+.blue_line {
+    background-color: var(--clr_accent);
+    height: 2px;
+}
+
+.page_header {
+    padding: var(--dm_100);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upper_header {
+    display: flex;
+    align-items: center;
+    gap: var(--dm_100);
+    font-weight: var(--fw_bold);
+    margin-block-end: var(--dm_100);
+}
+
+.upper_header .blue_line {
+    flex-grow: 100;
+}
+
+.napster {
+    color: var(--clr_foreground);
+}
+
+.nav_list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--dm_100);
+}
+
+.nav_link {
+    color: var(--clr_foreground);
+}
+
+.nav_link:hover {
+    text-decoration: underline;
+}
+
+.nav_link.title {
+    font-weight: var(--fw_bold);
+}
+
+/* aside page header thingy */
+
+.content_description {
+    padding: var(--dm_100);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--dm_100);
+}
+
+.content_descriptor {
+    display: flex;
+    align-items: center;
+    gap: var(--dm_100);
+}
+
+.content_descriptor .blue_line {
+    flex-grow: 100;
+}
+
+/* main */
+
+main {
+    margin-bottom: var(--dm_400);
+}
+
+main :is(
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6
+) {
+    font-weight: var(--fw_bold);
+}
+
+.main_section {
+    padding: 0 var(--dm_100) 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--dm_100);
+}
+
+.main_section + .main_section {
+    margin-block-start: var(--dm_300);
+}
+
+.main_section section {
+    grid-column: 2 / -2;
+}
+
+.main_section:has(img) {
+    padding: 0;
+}
+
+/* 
+main {
+    padding: 0 var(--dm_100) 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--dm_100);
+    margin-bottom: var(--dm_400);
+}
+
+.main_wrapper {
+    grid-column: 2 / -2;
+} */
+
+.text_content p {
+    line-height: 1.5;
+}
+
+.text_content :not(:first-child) {
+    margin-block-start: var(--dm_100);
+}
+
+.text_content + * {
+    margin-block-start: var(--dm_300);
+}
+
+/* bibliography */
+
+.sources :not(:first-child) {
+    margin-block-start: var(--dm_100);
+}
+
+.source_list {
+    list-style: none;
+}
+
+.source {
+    line-height: 2;
+    text-indent: -4rem;
+    padding-left: 4rem;
+    overflow-wrap: break-word;
+}
+
+.source_italic {
+    font-style: italic;
+}
+
+/* color lines */
+
+.red_line {
+    background-color: hsl(6 90% 45%);
+}
+
+.green_line {
+    background-color: hsl(139 100% 40%);
+}
+
+.rainbow_line {
+    background-image: linear-gradient( 89.7deg, rgba(223,0,0,1) 2.7%, rgba(214,91,0,1) 15.1%, rgba(233,245,0,1) 29.5%, rgba(23,255,17,1) 45.8%, rgba(29,255,255,1) 61.5%, rgba(5,17,255,1) 76.4%, rgba(202,0,253,1) 92.4% );
+}
+
+.sage_green_line {
+    background-color: hsl(75, 26%, 48%);
+}
+
+/* medias */
+
+@media (max-width: 40rem) {
+    .upper_header {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .upper_header .blue_line {
+        display: none;
+    }
+
+    .napster {
+        text-decoration-color: var(--clr_accent);
+    }
+
+    .upper_header :is(
+        h1,
+        h2
+    )::after {
+        content: " *";
+        color: var(--clr_accent);
+    }
+
+    .upper_header:has(.sage_green_line) :is(
+        h1,
+        h2
+    )::after {
+        color: hsl(75, 26%, 48%);
+    }
+
+    .nav_list {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .content_description {
+        display: block;
+        gap: 0rem;
+    }
+
+    .content_description > :not(:first-child) {
+        margin-block-start: var(--dm_100);
+    }
+
+    .content_description .blue_line {
+        display: none;
+    }
+
+    .content_descriptor p::after {
+        content: ",";
+    }
+
+    .source {
+        text-indent: -2rem;
+        padding-left: 2rem;
+    }
+
+    .remove_at_small {
+        display: none;
+    }
+}
+
+@media (max-width: 50rem) {
+    main {
+        display: block;
+    }
+}
+
+@media (max-width: 60rem) {
+    main {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
